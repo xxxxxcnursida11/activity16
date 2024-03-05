@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sliding Navigation</title>
+  <link rel="stylesheet" type="text/css" href="hehe.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+        <h1>Mo Slide Nga Navagation</h1>
+        </div>
+    </header>
+  <div class="nav-container">
+    <div class="nav-box" id="main-nav">
+      <ul>
+        <button><li><a href="#" class="nav-link" data-target="about-nav">About</a></li></button>
+        <button><li><a href="#" class="nav-link" data-target="products-nav">Products</a></li></button>
+        <button><li><a href="#" class="nav-link" data-target="resources-nav">Resources</a></li></button>
+        <button><li><a href="#">Contact</a></li></button>
+      </ul>
+    </div>
+    <div class="nav-box" id="about-nav">
+      <a href="#" class="back-link" data-target="main-nav">Back to About</a>
+      <ul>
+        <button><li><a href="#" class="nav-link" data-target="media-nav">Media</a></li></button>
+        <button><li><a href="#">History</a></li></button>
+        <button><li><a href="#">Staff</a></li></button>
+      </ul>
+    </div>
+    <div class="nav-box" id="media-nav">
+      <a href="#" class="back-link" data-target="about-nav">Back to Media</a>
+      <ul>
+        <button><li><a href="#">Brochures</a></li></button>
+        <button><li><a href="#">Videos</a></li></button>
+        <button><li><a href="#">Downloads</a></li></button>
+      </ul>
+    </div>
+    <div class="nav-box" id="products-nav">
+      <a href="#" class="back-link" data-target="main-nav">Back to Products</a>
+      <ul>
+        <button><li><a href="#">Widgets</a></li></button>
+        <button><li><a href="#">Contraptions</a></li></button>
+        <button><li><a href="#">Gizmos</a></li></button>
+      </ul>
+    </div>
+    <div class="nav-box" id="resources-nav">
+      <a href="#" class="back-link" data-target="main-nav">Back to Resources</a>
+      <ul>
+        <button><li><a href="#">Manuals</a></li></button>
+        <button><li><a href="#">Knowledgebase</a></li></button>
+        <button><li><a href="#">Support</a></li></button>
+      </ul>
+    </div>
+  </div>
+  <footer> Mo Slide sa iyang heart yieee sir hinay hinay lang</footer>
+  <script>
+
+const navLinks = document.querySelectorAll('.nav-link');
+const backLinks = document.querySelectorAll('.back-link');
+const navBoxes = document.querySelectorAll('.nav-box');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.getElementById(link.dataset.target);
+    navBoxes.forEach(box => box.classList.remove('active'));
+    target.classList.add('active');
+  });
+});
+
+backLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const target = document.getElementById(link.dataset.target);
+    navBoxes.forEach(box => box.classList.remove('active'));
+    target.classList.add('active');
+  });
+});
